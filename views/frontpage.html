@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Is het kutweer?</h1>
+<p>Het is {{ current_condition.temp_C }} fucking graden!</p>
+
+{% if current_condition.temp_C < 0 %}
+<p>What the fuck het vriest!? Dikke trui aan en binnenblijven!</p>
+{% elseif current_condition.temp_C < 10 %}
+<p>Stervens koud dus! Binnenblijven!</p>
+{% elseif current_condition.temp_C < 25 %}
+<p>Beetje lauw weer! Niet veel aan dus!</p>
+{% elseif current_condition.temp_C > 35 %}
+<p>Potverdorie dat is veels te heet! Op deze manier sterf je van de hitte!</p>
+{% else %}
+<p>Best wel lekker weer dus!</p>
+{% endif %}
+
+{% if current_condition.precipMM >= 1 %}
+<p>En het regent ook nog eens verdorie!</p>
+{% endif %}
+
+<p><a href="{{ constant('APP_URI') }}/morgen">Wil je weten wat voor weer het morgen wordt?!</a></p>
+{% endblock %}

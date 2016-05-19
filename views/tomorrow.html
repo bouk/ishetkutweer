@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Wordt het morgen kutweer?</h1>
+<p>Morgen wordt het tussen de {{ weather_tomorrow.tempMinC }} en {{ weather_tomorrow.tempMaxC }} graden Celsius potverdorie!</p>
+{% if weather_tomorrow.precipMM >= 1 %}
+<p>En het gaat ook nog eens even lekker regenen! Klerezooi!</p>
+<p><a href="{{ constant('APP_URI') }}/">Terug naar het kutweer van vandaag!</a></p>
+{% endif %}
+{% endblock %}

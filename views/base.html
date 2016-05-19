@@ -1,0 +1,63 @@
+{% spaceless %}
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="nl" class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]>   <html lang="nl" class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]>   <html lang="nl" class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]>   <html lang="nl" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="nl" class="no-js"><!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>IS HET KUTWEER?</title>
+	<meta name="description" content="Kijk of het vandaag weer kutweer is">
+	<meta name="author" content="Bouke van der Bijl">
+	<meta property="og:title" content="IS HET KUTWEER?" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://ishetkutweer.nl" />
+	<meta property="og:image" content="http://i.imgur.com/aDnH3.png" />
+	<meta property="og:site_name" content="IS HET KUTWEER?" />
+	<link rel="stylesheet" href="{{ constant('APP_URI') }}/css/style.css">
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div id="container">
+		{% block content %}{% endblock %}
+		<div class="socmedia">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ishetkutweer.nl" data-text="IS HET KUTWEER?!" data-lang="nl"  data-hashtags="kutweer">Tweeten</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<div class="fb-like" data-href="http://ishetkutweer.nl" data-send="false" data-width="400" data-show-faces="false"></div>
+		</div>
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-7364836140198959";
+		google_ad_slot = "5658483990";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		</script>
+		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+		<p class="footnote first-footnote">Deze site is in elkaar geprutst door <a href="http://boukevanderbijl.nl" target="_blank">Bouke van der Bijl</a>! Haatmail kan je naar hem sturen!</p>
+		<p class="footnote">Deze site maakt gebruik van <a href="http://www.worldweatheronline.com" target="_blank">World Weather Online</a>!</p>
+	</div>
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-27777559-2']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+	{% block endbody %}{% endblock %}
+</body>
+</html>
+{% endspaceless %}
